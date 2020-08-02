@@ -13,42 +13,73 @@ import {
   Table,
 } from "react-bootstrap";
 
-class ResumePage extends Component {
 
-  render() {
-    const renderExperienceTable = () => {
-      return (
-        <Table striped bordered hover variant="dark">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td colSpan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </Table>
-      );
-    };
+
+
+function RenderExperienceTable () {
+  return (
+    <Row>
+      <Col xs={6} md={4}>
+    <Table striped bordered hover variant="dark">
+      <thead>
+        <tr>
+          <th>Skill</th>
+          <th>Experience Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Java</td>
+          <td>6 Years</td>
+        </tr>
+        <tr>
+          <td>Scrum/Agile</td>
+          <td>4 Years</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td>2 Years</td>
+        </tr>
+        <tr>
+          <td>Android Studio</td>
+          <td>1 Year</td>
+        </tr>
+        <tr>
+          <td>Unity Augmented Reality (C#)</td>
+          <td>1 Year</td>
+        </tr>
+        <tr>
+          <td>React</td>
+          <td>2 Months</td>
+        </tr>
+        <tr>
+          <td>Java Spring Framework</td>
+          <td>2 months</td>
+        </tr>
+        <tr>
+          <td>Java Spring Boot API's</td>
+          <td>2 Months</td>
+        </tr>
+        <tr>
+          <td>AWS</td>
+          <td>2 Months</td>
+        </tr>
+        <tr>
+          <td>AWS Certification</td>
+          <td>TBD</td>
+        </tr>
+      </tbody>
+    </Table>
+    </Col>
+    <Col></Col>
+    </Row>
+  );
+};
+
+
+
+
+function ResumePage(props) {
 
     return (
       <div>
@@ -195,7 +226,7 @@ class ResumePage extends Component {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="2">
                   <Card.Body>
-                    {this.renderExperienceTable}
+                    <RenderExperienceTable/>
                     {/* <ListGroup variant="flush">
                       <ListGroup.Item>
                         Java.....................6 Years
@@ -337,6 +368,6 @@ class ResumePage extends Component {
       </div>
     );
   }
-}
+
 
 export default ResumePage;
