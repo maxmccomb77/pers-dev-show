@@ -23,7 +23,7 @@ class HomePage extends Component {
         </ul>
         <p>         - Max McComb</p>
         <p>
-          <Button href="https://github.com/maxmccomb77/pers-dev-show" variant="primary">Check out the Git Repo for this Project</Button>
+          <Button href="https://github.com/maxmccomb77/pers-dev-show" target ="_blank" variant="primary">Check out the Git Repo for this Project</Button>
         </p>
       </Jumbotron>
     );
