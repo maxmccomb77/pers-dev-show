@@ -7,12 +7,47 @@ import {
   Row,
   Col,
   ListGroup,
+  Button,
+  Modal,
+  Form,
+  Table,
 } from "react-bootstrap";
 
 class ResumePage extends Component {
+
   render() {
-    const renderJumbotron = () => {
-      return <div></div>;
+    const renderExperienceTable = () => {
+      return (
+        <Table striped bordered hover variant="dark">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td colSpan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </Table>
+      );
     };
 
     return (
@@ -58,7 +93,7 @@ class ResumePage extends Component {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="1">
                   <Card.Body>
-                    <Container fluid>
+                    <Row>
                       <Col>
                         <p>
                           <b>Bachelor of Arts</b>
@@ -74,11 +109,83 @@ class ResumePage extends Component {
                         </ul>
                       </Col>
                       <Col>
-                        <Card>
-                          <Card.Img src="..\..\assets\augustanalogo.jpeg" />
-                        </Card>
+                        <Row>
+                          <Col>
+                            <Card
+                              className="card text-center"
+                              bg="dark"
+                              style={{ width: "18rem", height: "24rem" }}
+                            >
+                              <Card.Img
+                                src={require("../assets/augustanalogo.png")}
+                                rounded
+                              />
+                              <Card.Body>
+                                <Button
+                                  variant="secondary"
+                                  href="https://www.augustana.edu/"
+                                  target="_blank"
+                                >
+                                  Learn more about Augustana
+                                </Button>
+                              </Card.Body>
+                            </Card>
+                          </Col>
+                          <Col>
+                            <Card
+                              className="card text-center"
+                              bg="dark"
+                              style={{ width: "18rem", height: "24rem" }}
+                            >
+                              <Card.Img
+                                src={require("../assets/mail-icon-black.png")}
+                                rounded
+                              />
+                              <Card.Body>
+                                <Button
+                                  variant="secondary"
+                                  // onClick={this.toggleModal}
+                                >
+                                  Inquire about Transcript
+                                </Button>
+                                {/* <Modal
+                                  show={this.state.isModalOpen}
+                                  onHide={this.toggleModal}
+                                >
+                                  <Modal.Header>
+                                    <Modal.Title>
+                                      Request To See Max McComb's Transcript
+                                    </Modal.Title>
+                                  </Modal.Header>
+                                  <Modal.Body>
+                                    <Form>
+                                      <Form.Label>Email address</Form.Label>
+                                      <Form.Control
+                                        type="email"
+                                        placeholder="Enter email"
+                                      />
+                                    </Form>
+                                    There will be a box here for contact
+                                    information.
+                                  </Modal.Body>
+                                  <Modal.Footer>
+                                    <Button
+                                      variant="secondary"
+                                      onClick={this.toggleModal}
+                                    >
+                                      Cancel
+                                    </Button>
+                                    <Button variant="primary">
+                                      Request Transcript
+                                    </Button>
+                                  </Modal.Footer>
+                                </Modal> */}
+                              </Card.Body>
+                            </Card>
+                          </Col>
+                        </Row>
                       </Col>
-                    </Container>
+                    </Row>
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -88,19 +195,40 @@ class ResumePage extends Component {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="2">
                   <Card.Body>
-                    <ListGroup variant="flush">
-                      <ListGroup.Item>Java.....................6 Years</ListGroup.Item>
-                      <ListGroup.Item>Scrum/Agile..............4 Years</ListGroup.Item>
-                      <ListGroup.Item>Github...................4 Years</ListGroup.Item>
-                      <ListGroup.Item>Python...................2 Years </ListGroup.Item>
-                      <ListGroup.Item>Android Studio...........1 Year</ListGroup.Item>
-                      <ListGroup.Item>Unity AR (C#)............1 Year</ListGroup.Item>
-                      <ListGroup.Item>React....................1 Month</ListGroup.Item>
-                      <ListGroup.Item>CSS......................1 Month</ListGroup.Item>
-                      <ListGroup.Item>Java Spring Framework....1 Month</ListGroup.Item>
-                      <ListGroup.Item>AWS.......................TBD</ListGroup.Item>
+                    {this.renderExperienceTable}
+                    {/* <ListGroup variant="flush">
+                      <ListGroup.Item>
+                        Java.....................6 Years
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        Scrum/Agile..............4 Years
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        Github...................4 Years
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        Python...................2 Years{" "}
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        Android Studio...........1 Year
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        Unity AR (C#)............1 Year
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        React....................1 Month
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        CSS......................1 Month
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        Java Spring Framework....1 Month
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        AWS.......................TBD
+                      </ListGroup.Item>
                       <ListGroup.Item></ListGroup.Item>
-                    </ListGroup>
+                    </ListGroup> */}
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
